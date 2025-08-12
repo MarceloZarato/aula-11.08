@@ -28,7 +28,7 @@ def listar ():
     con.close()
 
 def atualizar():
-    con = conectar
+    con = conectar()
     cur = con.cursor()
     id_produto = int(input("ID do produto: "))
     preco = float (input("Novo preço: "))
@@ -38,7 +38,7 @@ def atualizar():
     
     
 def excluir():
-    con = conectar
+    con = conectar()
     cur = con.cursor()
     id_produto = int(input("ID para excluir: "))
     cur.execute ("DELETE FROM produtos WHERE id= %s", (id_produto,))
